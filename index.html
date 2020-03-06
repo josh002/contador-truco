@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Truco</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="pantalla-1">
+            <h2>Contador de Truco</h2>
+            <div id="inputs">
+                <input class="equipo-input" type="text" placeholder="Equipo 1">
+                <input class="equipo-input" type="text" placeholder="Equipo 1">
+            </div>
+
+            <div id="tipo-juego">
+                <button id="tipojuego-24">a 24</button>
+                <button id="tipojuego-30">a 30</button>
+            </div>
+            <div id="iniciar-container">
+                <button id="iniciar">INICIAR</button>
+            </div>
+
+        </div>
+        <div id="pantalla-2">
+            <div>
+                <div id="equipos">
+                    <div id="equipo-1">
+                        <div id="arriba-1">
+                            <button id="suma-puntos-1">+</button>
+                            <p>Equipo1</p>
+                        </div>
+    
+                        <div id="puntos-equipo-1">
+                            q
+                        </div>
+    
+                    </div>
+                    <div id="equipo-2">
+                        <div id="equipo-2">
+                            <div id="arriba-2">
+                                <button id="suma-puntos-2">
+                                    <p>+</p>
+                                </button>
+                                <p>Equipo2</p>
+                            </div>
+    
+                            <div id="puntos-equipo-2">
+                                2
+                            </div>
+    
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div id="puntos">
+                <div>
+                    <button id="resta-puntos-1">-</button>
+                    <p id="puntos-actuales-1">0</p>
+                </div>
+                <div>
+                    <button id="resta-puntos-2">-</button>
+                    <p id="puntos-actuales-2">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./app/app.js"></script>
+</body>
+
+</html>

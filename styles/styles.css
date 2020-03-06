@@ -1,0 +1,158 @@
+/* contenedor de todo */
+*{
+    color: white;
+    padding: 0;
+    margin:0;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(0, 140, 35);
+    color: white;
+    overflow: auto;
+}
+
+/* PANTALLA 1 */
+
+#pantalla-1 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+}
+
+#tipo-juego {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    width: 100%;
+    height: 22%;
+    justify-content: space-between;
+    
+}
+
+#tipojuego-30 {
+    height: 40%;
+   width: 45%;
+    font-size: 160%;
+    
+}
+#tipojuego-24{
+    height: 40%;
+    width: 45%;
+    font-size: 160%;
+    }
+
+/* color placeholder */
+
+::-webkit-input-placeholder {
+    color: white;
+    font-size: 120%;
+}
+
+/* botones de elegir tipo de juego */
+
+button {
+    color: white;
+    background-color: rgb(0, 140, 35);
+}
+
+/* inputs */
+#inputs{
+    height: 30%;
+    margin-top: 15%;
+    width: 100%;
+    justify-content: center;
+}
+.equipo-input {
+    width: 100%;
+    text-align: center;
+    border: 2px white solid;
+    background-color: rgb(0, 140, 35);
+    margin-top: 20px;
+    height: 30%;
+    font-size: 150%;
+}
+/* boton para iniciar juego */
+#iniciar {
+    margin-top: 0;
+    height: 50px;
+    width: 100%;
+    font-size: 160%;
+}
+
+#iniciar-container {
+    width: 50%;
+}
+
+/* visibilidad del container */
+
+h2{
+    width: 100%;
+    font-size: 250%;
+    height: 10%;
+    text-align: center;
+    margin-top: 10%;
+}
+
+/* PANTALLA 2 */
+#pantalla-2{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 95%;
+        align-items: center;
+        font-size: 150%;
+}
+#equipos{
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+    margin-top: 0;
+}
+/* equipo 1 */
+#equipo-1{
+    width: 47vw;
+    border-right: 2px solid white ;
+    margin-right: 3vw;
+}
+
+#puntos-equipo-1{
+    height: 60vh;
+}
+#arriba-1{
+    display: flex;
+    flex-direction: row;
+}
+#resta-puntos-1{
+    font-size: 150%;
+    width: 60px;    
+}
+#suma-puntos-1{
+    font-size: 150%;
+    width: 55px;
+}
+/* equipo 2 */
+#puntos-equipo-2{
+    height: 60vh;
+}
+#arriba-2{
+    display: flex;
+    flex-direction: row;
+}
+#resta-puntos-2{
+    font-size: 150%;
+    width: 60px;    
+}
+#suma-puntos-2{
+    font-size: 150%;
+    width: 55px;
+}
+
+/* PUNTOS TOTALES */
+#puntos{
+    display: flex;
+}
