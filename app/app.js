@@ -3,13 +3,14 @@ var puntos2 = 0;
 var nombre1 = 'Equipo 1';
 var nombre2 = 'Equipo 2';
 var tipoJuego;
+var control1, control2, control3, control4, control5, control6;
 $(document).ready(function () {
     $('#pantalla-2').hide();
     $('#iniciar').on('click', function () {
 
         //asigna el nombre del equipo a la variable
         nombre1 = $('#nombre-equipo-1').val();
-        nombre2 = $('#nombre-equipo-2').val();      
+        nombre2 = $('#nombre-equipo-2').val();
 
         //asignar nombres a pantalla 2
         $('#titulo-1').text(nombre1);
@@ -50,12 +51,13 @@ $(document).ready(function () {
     $('#suma-puntos-1').on('click', function () {
         puntos1++;
         sumaPuntos1();
-        pintarPuntos();
+        pintarPuntosSuma();
     })
 
     $('#suma-puntos-2').on('click', function () {
         puntos2++;
         sumaPuntos2();
+        pintarPuntosSumaDos();
     })
 
     function sumaPuntos1() {
@@ -68,12 +70,15 @@ $(document).ready(function () {
 
     // RESTAR PUNTOS
     $('#resta-puntos-1').on('click', function () {
+        pintarPuntosResta();
         puntos1--;
         restaPuntos1();
         
+
     })
 
     $('#resta-puntos-2').on('click', function () {
+        pintarPuntosRestaDos();
         puntos2--;
         restaPuntos2();
     })
@@ -102,7 +107,7 @@ $(document).ready(function () {
         }
     }
     //para reiniciar juego
-    $('#reiniciar-juego').on('click', function(){
+    $('#reiniciar-juego').on('click', function () {
         reiniciarJuego();
     })
     function reiniciarJuego() {
@@ -116,7 +121,102 @@ $(document).ready(function () {
     }
 
     //Pintar puntos con palitos
-    function pintarPuntos(){
-        
+    //DEL EQUIPO 1
+    function pintarPuntosSuma() {
+        control1 = puntos1;
+        control2 = puntos1 - 5;
+        control3 = puntos1 - 10;
+        control4 = puntos1 - 15;
+        control5 = puntos1 - 20;
+        control6 = puntos1 - 25;
+
+        if (puntos1 <= 5) {
+            $('#primer-cuadrado-1').addClass('palitos-' + control1);
+        } else if (puntos1 <= 10) {
+            $('#segundo-cuadrado-1').addClass('palitos-' + control2);
+        } else if (puntos1 <= 15) {
+            $('#tercer-cuadrado-1').addClass('palitos-' + control3);
+        } else if (puntos1 <= 20) {
+            $('#cuarto-cuadrado-1').addClass('palitos-' + control4);
+        } else if (puntos1 <= 25) {
+            $('#quinto-cuadrado-1').addClass('palitos-' + control5);
+        } else if (puntos1 <= 30) {
+            $('#sexto-cuadrado-1').addClass('palitos-' + control6);
+        }
     }
+    function pintarPuntosResta() {
+        control1 = puntos1;
+        control2 = puntos1 - 5;
+        control3 = puntos1 - 10;
+        control4 = puntos1 - 15;
+        control5 = puntos1 - 20;
+        control6 = puntos1 - 25;
+
+        if (puntos1 <= 5) {
+            $('#primer-cuadrado-1').removeClass('palitos-' + control1);
+        } else if (puntos1 <= 10) {
+            $('#segundo-cuadrado-1').removeClass('palitos-' + control2);
+        } else if (puntos1 <= 15) {
+            $('#tercer-cuadrado-1').removeClass('palitos-' + control3);
+        } else if (puntos1 <= 20) {
+            $('#cuarto-cuadrado-1').removeClass('palitos-' + control4);
+        } else if (puntos1 <= 25) {
+            $('#quinto-cuadrado-1').removeClass('palitos-' + control5);
+        } else if (puntos1 <= 30) {
+            $('#sexto-cuadrado-1').removeClass('palitos-' + control6);
+        }
+    }
+
+    //DEL EQUIPO 2
+    function pintarPuntosSumaDos() {
+        control1 = puntos2;
+        control2 = puntos2 - 5;
+        control3 = puntos2 - 10;
+        control4 = puntos2 - 15;
+        control5 = puntos2 - 20;
+        control6 = puntos2 - 25;
+
+        if (puntos2 <= 5) {
+            $('#primer-cuadrado-2').addClass('palitos-' + control1);
+        } else if (puntos2 <= 10) {
+            $('#segundo-cuadrado-2').addClass('palitos-' + control2);
+        } else if (puntos2 <= 15) {
+            $('#tercer-cuadrado-2').addClass('palitos-' + control3);
+        } else if (puntos2 <= 20) {
+            $('#cuarto-cuadrado-2').addClass('palitos-' + control4);
+        } else if (puntos2 <= 25) {
+            $('#quinto-cuadrado-2').addClass('palitos-' + control5);
+        } else if (puntos2 <= 30) {
+            $('#sexto-cuadrado-2').addClass('palitos-' + control6);
+        }
+    }
+    function pintarPuntosRestaDos() {
+        control1 = puntos2;
+        control2 = puntos2 - 5;
+        control3 = puntos2 - 10;
+        control4 = puntos2 - 15;
+        control5 = puntos2 - 20;
+        control6 = puntos2 - 25;
+
+        if (puntos2 <= 5) {
+            $('#primer-cuadrado-2').removeClass('palitos-' + control1);
+        } else if (puntos2 <= 10) {
+            $('#segundo-cuadrado-2').removeClass('palitos-' + control2);
+        } else if (puntos2 <= 15) {
+            $('#tercer-cuadrado-2').removeClass('palitos-' + control3);
+        } else if (puntos2 <= 20) {
+            $('#cuarto-cuadrado-2').removeClass('palitos-' + control4);
+        } else if (puntos2 <= 25) {
+            $('#quinto-cuadrado-2').removeClass('palitos-' + control5);
+        } else if (puntos2 <= 30) {
+            $('#sexto-cuadrado-2').removeClass('palitos-' + control6);
+        }
+    }
+
+    //DESPINTAR TODO PARA REINICIAR
+    // function despintarReinicio(){
+    //     for(let i = 1; i < 31;i++){
+
+    //     }
+    // }
 })
