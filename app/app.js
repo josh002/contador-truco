@@ -1,7 +1,7 @@
 var puntos1 = 0;
 var puntos2 = 0;
 $(document).ready(function(){
-    $('#pantalla-2').hide();
+    // $('#pantalla-2').hide();
      $('#iniciar').on('click', function(){
         $('#pantalla-1').hide();
         $('#pantalla-2').show();
