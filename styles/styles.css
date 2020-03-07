@@ -24,18 +24,21 @@
 /*titulo principal*/
 
 h2 {
-    font-size: 950% !important;
+    /* font-size: 950% !important; */
+    font-size: 800% !important;
     margin: 0 !important;
 }
 
 #titulo-contador {
     font-size: 300%;
+    font-family: 'Merienda', cursive;
     padding: 0;
     margin: 0;
 }
 
 .titulo {
-    font-family: 'Burnstown Dam', arial;
+    /* font-family: 'Burnstown Dam', arial; */
+    font-family: 'Merienda', cursive;
     color: white;
 }
 
@@ -55,7 +58,8 @@ h2 {
 /* nombres equipos */
 
 h3 {
-    font-family: 'Burnstown Dam', arial;
+    /* font-family: 'Burnstown Dam', arial; */
+    font-family: 'Merienda', cursive;
     font-size: 350% !important;
     border-bottom: 3px solid;
 }
