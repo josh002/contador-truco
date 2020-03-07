@@ -5,70 +5,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Truco</title>
 </head>
 
 <body>
-    <div class="container">
-        <div id="pantalla-1">
-            <h2>Contador de Truco</h2>
-            <div id="inputs">
-                <input class="equipo-input" type="text" placeholder="Equipo 1">
-                <input class="equipo-input" type="text" placeholder="Equipo 1">
+    <div class="container-fluid">
+        <!-- <div class="row container-fluid justify-content-center" id="pantalla-1">
+            <div class="col-12">
+                <div class="row">
+                    <h2 class="titulo col-12 text-center">Truco</h2>
+                    <p class="titulo col-12 text-center" id="titulo-contador">- contador -</p>
+                </div>
             </div>
 
-            <div id="tipo-juego">
-                <button id="tipojuego-24">a 24</button>
-                <button id="tipojuego-30">a 30</button>
-            </div>
-            <div id="iniciar-container">
-                <button id="iniciar">INICIAR</button>
+            <div id="inputs" class="col-12">
+                <div class="row justify-content-center">
+                    <input class="equipo-input input-group-text col-9 mt-2" type="text" placeholder="Equipo 1">
+                    <input class="equipo-input input-group-text col-9 mt-4" type="text" placeholder="Equipo 2">
+                </div>
             </div>
 
-        </div>
-        <div id="pantalla-2">
-            <div>
-                <div id="equipos">
-                    <div id="equipo-1">
-                        <div id="arriba-1">
-                            <button id="suma-puntos-1">+</button>
-                            <p>Equipo1</p>
-                        </div>
-    
-                        <div id="puntos-equipo-1">
-                            q
-                        </div>
-    
-                    </div>
-                    <div id="equipo-2">
-                        <div id="equipo-2">
-                            <div id="arriba-2">
-                                <button id="suma-puntos-2">
-                                    <p>+</p>
-                                </button>
-                                <p>Equipo2</p>
-                            </div>
-    
-                            <div id="puntos-equipo-2">
-                                2
-                            </div>
-    
-                        </div>
-                    </div>
-                    
+            <div id="tipo-juego" class="col-12">
+                <div class="row d-flex justify-content-around">
+                    <button id="tipojuego-24" class="col-4">a 24</button>
+                    <button id="tipojuego-30" class="col-4">a 30</button>
                 </div>
             </div>
-            
-            <div id="puntos">
-                <div>
-                    <button id="resta-puntos-1">-</button>
-                    <p id="puntos-actuales-1">0</p>
+            <div id="iniciar-container" class="col-12 ">
+                <div class="row justify-content-center">
+                    <button class="col-6" id="iniciar">INICIAR</button>
                 </div>
-                <div>
-                    <button id="resta-puntos-2">-</button>
-                    <p id="puntos-actuales-2">0</p>
-                </div>
+                
             </div>
+
+        </div> -->
+        <div id="pantalla-2" class="container-fluid justify-content-center">
+
+            <div id="equipos" class="row">
+                <div id="equipo-1" class="col-6">
+                    <div class="row">
+                        <div class="col-12 titulo-pantalla-2">
+                            <h3 class="mt-1 text-center" id="titulo-1">Equipo 1</h3>
+                        </div>
+                        <div class="col-12" id="puntos">
+                            <div class="row puntos-1">
+                                <div class="col-12 my-border pb-2">
+                                    <div class="row my-margin">
+                                        <div class="col-12 palitos-5 palitos-general"></div>
+                                        <div class="col-12 palitos-5 palitos-general mt-1 mb-1"></div>
+                                        <div class="col-12 palitos-5 palitos-general"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 buenas-1 mt-2">
+                                    <div class="row my-margin">
+                                        <div class="col-12 palitos-5 palitos-general"></div>
+                                        <div class="col-12 palitos-5 palitos-general mt-1 mb-1"></div>
+                                        <div class="col-12 palitos-5 palitos-general"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <h4 class="text-center">15</h4>
+                        </div>
+                        <div class="col-12">
+                            <div class="row d-flex justify-content-around">
+                                <button class="col-4">+</button>
+                                <button class="col-4">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="equipo-1" class="col-6">
+                    <div class="row">
+                        <div class="col-12 titulo-pantalla-2">
+                            <h3 class="mt-1 text-center">Equipo 2</h3>
+                        </div>
+                        <div class="col-12" id="puntos">
+                            <div class="row ">
+                                <div class="col-12 my-border pb-2">
+                                    <div class="row my-margin">
+                                        <div class="col-12 palitos-5 palitos-general"></div>
+                                        <div class="col-12 palitos-5 palitos-general mt-1 mb-1"></div>
+                                        <div class="col-12 palitos-5 palitos-general"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 buenas-1 mt-2">
+                                    <div class="row my-margin">
+                                        <div class="col-12 palitos-5 palitos-general"></div>
+                                        <div class="col-12 palitos-5 palitos-general mt-1 mb-1"></div>
+                                        <div class="col-12 palitos-5 palitos-general"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 ">
+                            <h4 class="text-center">15</h4>
+                        </div>
+                        <div class="col-12">
+                            <div class="row d-flex justify-content-around">
+                                <button class="col-4">+</button>
+                                <button class="col-4">-</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
     </div>
 
