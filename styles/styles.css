@@ -1,79 +1,100 @@
 /* font-family del titulo */
-@import url(http://allfont.es/allfont.css?fonts=burnstown-dam); 
+
+@import url(http://allfont.es/allfont.css?fonts=burnstown-dam);
 /* contenedor de todo */
-*{
+
+* {
     padding: 0;
-    margin:0;
+    margin: 0;
     font-family: 'Merienda', cursive;
 }
-.container-fluid{
+
+.container-fluid {
     background-image: url('../images/prueba.jpg');
     height: 100vh;
     width: 100vw;
 }
 
 /* PANTALLA 1 */
-#pantalla-1{
+
+#pantalla-1 {
     margin: 0;
 }
+
 /*titulo principal*/
-h2{   
+
+h2 {
     font-size: 950% !important;
     margin: 0 !important;
-
 }
-#titulo-contador{
+
+#titulo-contador {
     font-size: 300%;
     padding: 0;
     margin: 0;
 }
-.titulo{
+
+.titulo {
     font-family: 'Burnstown Dam', arial;
-    color:white;
+    color: white;
 }
+
 /* INPUTS */
 
-#inputs{
+#inputs {
     margin-top: -20%;
 }
+
 /*PANTALLA 2*/
-#pantalla-2{
+
+#pantalla-2 {
     margin: 0;
-    color:white
+    color: white
 }
+
 /* nombres equipos */
-h3{
+
+h3 {
     font-family: 'Burnstown Dam', arial;
     font-size: 350% !important;
     border-bottom: 3px solid;
 }
-#titulo-1{
-    border-right:2px solid ;
+
+#titulo-1 {
+    border-right: 2px solid;
 }
-.titulo-pantalla-2{
+
+.titulo-pantalla-2 {
     padding: 0 !important;
 }
 
 /* IMAGENES DE PUNTOS */
-.palitos-0{
+
+.palitos-0 {
     background-image: url('../images/0.png');
 }
-.palitos-1{
+
+.palitos-1 {
     background-image: url('../images/1.png');
 }
-.palitos-2{
+
+.palitos-2 {
     background-image: url('../images/2.png');
 }
-.palitos-3{
+
+.palitos-3 {
     background-image: url('../images/3.png');
 }
-.palitos-4{
+
+.palitos-4 {
     background-image: url('../images/4.png');
 }
-.palitos-5{
+
+.palitos-5 {
     background-image: url('../images/5.png');
 }
-.palitos-general{
+
+.palitos-general {
     background-size: 55%;
     background-repeat: no-repeat;
     height: 80px;
@@ -81,44 +102,63 @@ h3{
     padding: 0 !important;
     margin: 0 !important;
 }
-.malas-1{
+
+.malas-1 {
     border-bottom: 3px solid;
 }
-.puntos-1{
-    border-right: 3px solid;    
+
+.puntos-1 {
+    border-right: 3px solid;
 }
-.my-margin{
+
+.my-margin {
     margin-left: 30px !important;
 }
-.my-border{
+
+.my-border {
     border-bottom: 3px solid;
 }
+
 /* BOTONES DE SUMAR - RESTAR */
-.mis-botones{
+
+.mis-botones {
     border-radius: 10px;
     font-size: 175%;
-    border:2px solid white;
+    border: 2px solid white;
     font-weight: 800;
     background-color: rgb(70, 60, 57);
     color: white;
 }
-.boton-reiniciar{
+
+.boton-reiniciar {
     border-radius: 10px;
     font-size: 100%;
     font-weight: 900;
     padding: 0 !important;
-    border:2px solid black;
+    border: 2px solid black;
     font-family: 'Merienda', cursive;
 }
-#puntos-equipo-2{
+
+#puntos-equipo-2 {
     font-size: 215%;
     margin: 0 !important;
 }
-#puntos-equipo-1{
+
+#puntos-equipo-1 {
     font-size: 215%;
     margin: 0 !important;
 }
-#tipo-de-juego{
+
+#tipo-de-juego {
     padding: 0 !important;
     margin: 0 !important;
+}
+
+/* SELECCION DE TIPO DE JUEGO */
+
+.seleccionado {
+    border-color: black;
+    color: black;
+    font-size: 200%;
+    
 }
