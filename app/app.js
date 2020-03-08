@@ -2,20 +2,31 @@ var puntos1 = 0;
 var puntos2 = 0;
 var nombre1 = 'Equipo 1';
 var nombre2 = 'Equipo 2';
-var tipoJuego;
+var tipoJuego = 30;
 var control1, control2, control3, control4, control5, control6;
 $(document).ready(function () {
     $('#pantalla-2').hide();
     $('#iniciar').on('click', function () {
 
-        //asigna el nombre del equipo a la variable
+        //asigna el nombre del equipo a la variable        
         nombre1 = $('#nombre-equipo-1').val();
         nombre2 = $('#nombre-equipo-2').val();
+
+        //control de que hayan puesto nombre al reiniciar
+        if (nombre1.length == 0) {
+            nombre1 = 'Equipo 1';
+        };
+        if (nombre2.length == 0) {
+            nombre2 = 'Equipo 2';
+        };
 
         //asignar nombres a pantalla 2
         $('#titulo-1').text(nombre1);
         $('#titulo-2').text(nombre2);
 
+        //deshabilitar botones de resta
+        $('#resta-puntos-2').prop('disabled', true);
+        $('#resta-puntos-1').prop('disabled', true);
 
         //ocultar pantalla 1 y mostrar pantalla 2
         $('#pantalla-1').hide();
@@ -52,12 +63,21 @@ $(document).ready(function () {
         puntos1++;
         sumaPuntos1();
         pintarPuntosSuma();
+        revisarPuntos(0);
+        if(puntos1 > 0){
+            habilitarRestarPuntos('primero');
+        }
+        
     })
 
     $('#suma-puntos-2').on('click', function () {
         puntos2++;
         sumaPuntos2();
         pintarPuntosSumaDos();
+        revisarPuntos(1);
+        if(puntos2 > 0){
+            habilitarRestarPuntos('segundo');
+        }
     })
 
     function sumaPuntos1() {
@@ -73,14 +93,20 @@ $(document).ready(function () {
         pintarPuntosResta();
         puntos1--;
         restaPuntos1();
-        
-
+        if (puntos1 < tipoJuego) {
+            habilitarSumarPuntos('primero');
+        };
+        revisarPuntosResta(0);
     })
 
     $('#resta-puntos-2').on('click', function () {
         pintarPuntosRestaDos();
         puntos2--;
         restaPuntos2();
+        if (puntos2 < tipoJuego) {
+            habilitarSumarPuntos('segundo');
+        };
+        revisarPuntosResta(1);
     })
 
     function restaPuntos1() {
@@ -106,19 +132,7 @@ $(document).ready(function () {
             tipoJuego = 30;
         }
     }
-    //para reiniciar juego
-    $('#reiniciar-juego').on('click', function () {
-        reiniciarJuego();
-    })
-    function reiniciarJuego() {
-        $('#pantalla-2').hide();
-        $('#pantalla-1').show();
-        puntos1 = 0;
-        puntos2 = 0;
-        nombre1 = 'Equipo 1';
-        nombre2 = 'Equipo 2';
-        tipoJuego;
-    }
+
 
     //Pintar puntos con palitos
     //DEL EQUIPO 1
@@ -212,11 +226,93 @@ $(document).ready(function () {
             $('#sexto-cuadrado-2').removeClass('palitos-' + control6);
         }
     }
+    // ----SECCION DEL REINICIAR JUEGO-------
+
+    //para reiniciar juego
+    $('#reiniciar-juego').on('click', function () {
+        reiniciarJuego();
+    })
+
+    function reiniciarJuego() {
+        $('#pantalla-2').hide();
+        $('#pantalla-1').show();
+        puntos1 = 0;
+        puntos2 = 0;
+        nombre1 = 'Equipo 1';
+        nombre2 = 'Equipo 2';
+        tipoJuego;
+        despintarReinicio();
+        depintarPuntosPantalla();
+        habilitarSumarPuntos('primero');
+        habilitarSumarPuntos('segundo');
+    }
 
     //DESPINTAR TODO PARA REINICIAR
-    // function despintarReinicio(){
-    //     for(let i = 1; i < 31;i++){
+    function despintarReinicio() {
+        for (let i = 1; i <= 5; i++) {
+            $('#primer-cuadrado-1').removeClass('palitos-' + i);
+            $('#segundo-cuadrado-1').removeClass('palitos-' + i);
+            $('#tercer-cuadrado-1').removeClass('palitos-' + i);
+            $('#cuarto-cuadrado-1').removeClass('palitos-' + i);
+            $('#quinto-cuadrado-1').removeClass('palitos-' + i);
+            $('#sexto-cuadrado-1').removeClass('palitos-' + i);
+        }
+        for (let i = 1; i <= 5; i++) {
+            $('#primer-cuadrado-2').removeClass('palitos-' + i);
+            $('#segundo-cuadrado-2').removeClass('palitos-' + i);
+            $('#tercer-cuadrado-2').removeClass('palitos-' + i);
+            $('#cuarto-cuadrado-2').removeClass('palitos-' + i);
+            $('#quinto-cuadrado-2').removeClass('palitos-' + i);
+            $('#sexto-cuadrado-2').removeClass('palitos-' + i);
+        }
+    }
+    // DESPINTAR PUNTOS EN PANTALLA 2
+    function depintarPuntosPantalla() {
+        $('#puntos-equipo-1').text('0');
+        $('#puntos-equipo-2').text('0');
+    }
 
-    //     }
-    // }
+    // -------SECCION PARA LIMITAR LOS PUNTOS----------
+    //deshabilita boton de suma al tope
+    function revisarPuntos(num) {
+        if (num) {
+            if (puntos2 == tipoJuego) {
+                $('#suma-puntos-2').prop('disabled', true);
+            }
+        } else {
+            if (puntos1 == tipoJuego) {
+                $('#suma-puntos-1').prop('disabled', true);
+            }
+        };
+    }
+    //habilitar sumar puntos
+    function habilitarSumarPuntos(boton) {
+        if (boton == 'primero') {
+            $('#suma-puntos-1').prop('disabled', false);
+        };
+        if (boton == 'segundo') {
+            $('#suma-puntos-2').prop('disabled', false);
+        }
+    }
+    //deshabilita boton de resta al tope
+    function revisarPuntosResta(num) {
+        if (num) {
+            if (puntos2 < 1) {
+                $('#resta-puntos-2').prop('disabled', true);
+            }
+        } else {
+            if (puntos1 < 1) {
+                $('#resta-puntos-1').prop('disabled', true);
+            }
+        };
+    }
+    //habilitar sumar puntos
+    function habilitarRestarPuntos(boton) {
+        if (boton == 'primero') {
+            $('#resta-puntos-1').prop('disabled', false);
+        };
+        if (boton == 'segundo') {
+            $('#resta-puntos-2').prop('disabled', false);
+        }
+    }
 })
