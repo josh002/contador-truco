@@ -3,9 +3,11 @@ var puntos2 = 0;
 var nombre1 = 'Equipo 1';
 var nombre2 = 'Equipo 2';
 var tipoJuego = 30;
-var control1, control2, control3, control4, control5, control6;
+var control1, control2, control3, control4, control5, control6, control7;
 $(document).ready(function () {
     $('#pantalla-2').hide();
+    // $('#pantalla-1').hide();
+    $('#pantalla-3').hide();
     $('#iniciar').on('click', function () {
 
         //asigna el nombre del equipo a la variable        
@@ -62,20 +64,30 @@ $(document).ready(function () {
     $('#suma-puntos-1').on('click', function () {
         puntos1++;
         sumaPuntos1();
-        pintarPuntosSuma();
+        if (tipoJuego == 30) {
+            pintarPuntosSuma();
+        } else {
+            pintarPuntosSuma24();
+        }
+
         revisarPuntos(0);
-        if(puntos1 > 0){
+        if (puntos1 > 0) {
             habilitarRestarPuntos('primero');
         }
-        
+
     })
 
     $('#suma-puntos-2').on('click', function () {
         puntos2++;
         sumaPuntos2();
-        pintarPuntosSumaDos();
+
+        if (tipoJuego == 30) {
+            pintarPuntosSumaDos();
+        } else {
+            pintarPuntosSuma24E2();
+        }
         revisarPuntos(1);
-        if(puntos2 > 0){
+        if (puntos2 > 0) {
             habilitarRestarPuntos('segundo');
         }
     })
@@ -90,7 +102,12 @@ $(document).ready(function () {
 
     // RESTAR PUNTOS
     $('#resta-puntos-1').on('click', function () {
-        pintarPuntosResta();
+
+        if (tipoJuego == 30) {
+            pintarPuntosResta();
+        } else {
+            pintarPuntosResta24();
+        }
         puntos1--;
         restaPuntos1();
         if (puntos1 < tipoJuego) {
@@ -100,7 +117,12 @@ $(document).ready(function () {
     })
 
     $('#resta-puntos-2').on('click', function () {
-        pintarPuntosRestaDos();
+        if (tipoJuego == 30) {
+            pintarPuntosRestaDos();
+        } else {
+            pintarPuntosResta24E2();
+        }
+
         puntos2--;
         restaPuntos2();
         if (puntos2 < tipoJuego) {
@@ -136,6 +158,8 @@ $(document).ready(function () {
 
     //Pintar puntos con palitos
     //DEL EQUIPO 1
+
+    //PARA 30 PUNTOS
     function pintarPuntosSuma() {
         control1 = puntos1;
         control2 = puntos1 - 5;
@@ -158,6 +182,58 @@ $(document).ready(function () {
             $('#sexto-cuadrado-1').addClass('palitos-' + control6);
         }
     }
+
+    //PARA 24 PUNTOS SUMA
+    function pintarPuntosSuma24() {
+        control1 = puntos1;
+        control2 = puntos1 - 5;
+        control3 = puntos1 - 10;
+        control4 = puntos1 - 12;
+        control5 = puntos1 - 17;
+        control6 = puntos1 - 22;
+
+        if (puntos1 <= 5) {
+            $('#primer-cuadrado-1').addClass('palitos-' + control1);
+        } else if (puntos1 <= 10) {
+            $('#segundo-cuadrado-1').addClass('palitos-' + control2);
+        } else if (puntos1 <= 12) {
+            $('#tercer-cuadrado-1').addClass('palitos-' + control3);
+        } else if (puntos1 <= 17) {
+            $('#cuarto-cuadrado-1').addClass('palitos-' + control4);
+        } else if (puntos1 <= 22) {
+            $('#quinto-cuadrado-1').addClass('palitos-' + control5);
+        } else if (puntos1 <= 24) {
+            $('#sexto-cuadrado-1').addClass('palitos-' + control6);
+        }
+    }
+
+    //PARA 24 PUNTOS RESTA
+    function pintarPuntosResta24() {
+        control1 = puntos1;
+        control2 = puntos1 - 5;
+        control3 = puntos1 - 10;
+        control4 = puntos1 - 12;
+        control5 = puntos1 - 17;
+        control6 = puntos1 - 22;
+
+        if (puntos1 <= 5) {
+            $('#primer-cuadrado-1').removeClass('palitos-' + control1);
+        } else if (puntos1 <= 10) {
+            $('#segundo-cuadrado-1').removeClass('palitos-' + control2);
+        } else if (puntos1 <= 12) {
+            $('#tercer-cuadrado-1').removeClass('palitos-' + control3);
+        }
+        else if (puntos1 <= 17) {
+            $('#cuarto-cuadrado-1').removeClass('palitos-' + control4);
+        } else if (puntos1 <= 22) {
+            $('#quinto-cuadrado-1').removeClass('palitos-' + control5);
+        } else if (puntos1 <= 24) {
+            $('#sexto-cuadrado-1').removeClass('palitos-' + control6);
+        }
+    }
+
+
+    // PINTAR PUNTOS RESTA MODO 30
     function pintarPuntosResta() {
         control1 = puntos1;
         control2 = puntos1 - 5;
@@ -226,6 +302,55 @@ $(document).ready(function () {
             $('#sexto-cuadrado-2').removeClass('palitos-' + control6);
         }
     }
+
+    //PARA 24 PUNTOS SUMA
+    function pintarPuntosSuma24E2() {
+        control1 = puntos2;
+        control2 = puntos2 - 5;
+        control3 = puntos2 - 10;
+        control4 = puntos2 - 12;
+        control5 = puntos2 - 17;
+        control6 = puntos2 - 22;
+
+        if (puntos2 <= 5) {
+            $('#primer-cuadrado-2').addClass('palitos-' + control1);
+        } else if (puntos2 <= 10) {
+            $('#segundo-cuadrado-2').addClass('palitos-' + control2);
+        } else if (puntos2 <= 12) {
+            $('#tercer-cuadrado-2').addClass('palitos-' + control3);
+        } else if (puntos2 <= 17) {
+            $('#cuarto-cuadrado-2').addClass('palitos-' + control4);
+        } else if (puntos2 <= 22) {
+            $('#quinto-cuadrado-2').addClass('palitos-' + control5);
+        } else if (puntos2 <= 24) {
+            $('#sexto-cuadrado-2').addClass('palitos-' + control6);
+        }
+    }
+
+    //PARA 24 PUNTOS RESTA
+    function pintarPuntosResta24E2() {
+        control1 = puntos2;
+        control2 = puntos2 - 5;
+        control3 = puntos2 - 10;
+        control4 = puntos2 - 12;
+        control5 = puntos2 - 17;
+        control6 = puntos2 - 22;
+
+        if (puntos2 <= 5) {
+            $('#primer-cuadrado-2').removeClass('palitos-' + control1);
+        } else if (puntos2 <= 10) {
+            $('#segundo-cuadrado-2').removeClass('palitos-' + control2);
+        } else if (puntos2 <= 12) {
+            $('#tercer-cuadrado-2').removeClass('palitos-' + control3);
+        }
+        else if (puntos2 <= 17) {
+            $('#cuarto-cuadrado-2').removeClass('palitos-' + control4);
+        } else if (puntos2 <= 22) {
+            $('#quinto-cuadrado-2').removeClass('palitos-' + control5);
+        } else if (puntos2 <= 24) {
+            $('#sexto-cuadrado-2').removeClass('palitos-' + control6);
+        }
+    }
     // ----SECCION DEL REINICIAR JUEGO-------
 
     //para reiniciar juego
@@ -273,15 +398,17 @@ $(document).ready(function () {
     }
 
     // -------SECCION PARA LIMITAR LOS PUNTOS----------
-    //deshabilita boton de suma al tope
+    //deshabilita boton de suma al tope y muestra ganador
     function revisarPuntos(num) {
         if (num) {
             if (puntos2 == tipoJuego) {
                 $('#suma-puntos-2').prop('disabled', true);
+                mostarGanador();
             }
         } else {
             if (puntos1 == tipoJuego) {
                 $('#suma-puntos-1').prop('disabled', true);
+                mostarGanador();
             }
         };
     }
@@ -314,5 +441,30 @@ $(document).ready(function () {
         if (boton == 'segundo') {
             $('#resta-puntos-2').prop('disabled', false);
         }
+    }
+
+    //PANTALLA 3
+    //MOSTRAR PANTALLA GANADOR
+
+    function mostarGanador(){
+        if(puntos1 ==  tipoJuego){
+            $('#equipo-ganador').text(nombre1);
+            $('#pantalla-2').hide();
+            $('#pantalla-3').show();
+        };
+        if(puntos2 ==  tipoJuego){
+            $('#equipo-ganador').text(nombre2)
+            $('#pantalla-2').hide();
+            $('#pantalla-3').show();
+        };
+    }
+
+    //REINICIO PANTALLA DE GANADOR
+    $('#reinicio-final').on('click', function (){
+        reinicioTodo();
+    })
+    function reinicioTodo() {
+        $('#pantalla-3').hide();
+        reiniciarJuego();
     }
 })

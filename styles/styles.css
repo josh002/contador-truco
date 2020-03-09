@@ -167,3 +167,18 @@ h3 {
     
 }
 
+/* PANTALLA 3 MENSAJE AL GANADOR */
+
+#mensaje-ganador{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'Merienda', cursive;
+    padding-top: 30vh;
+    font-size: 300%;
+}
+
+#pantalla-3{
+    margin: 0;
+}
